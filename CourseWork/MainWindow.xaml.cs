@@ -20,6 +20,11 @@ namespace CourseWork
     /// </summary>
     public partial class MainWindow : Window
     {
+        Label[] unknown;
+        TextBox[] oddBoxes;
+        int number;
+        int[] odds;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,10 +33,9 @@ namespace CourseWork
         private void button_Click(object sender, RoutedEventArgs e)
         {
             gd.Children.Clear();
-            int number = Convert.ToInt32(stepen.Text) + 1;
-            int[] odds = new int[number];
-            Label[] unknown = new Label[number];
-            TextBox[] oddBoxes = new TextBox[number];
+            number = Convert.ToInt32(stepen.Text) + 1;
+            unknown = new Label[number];
+            oddBoxes = new TextBox[number];
             int marginchik = 70, boxik = 43;
             for (int i = 0; i < number - 1; i++)
             {
@@ -64,5 +68,51 @@ namespace CourseWork
             oddBoxes[number - 1].VerticalAlignment = VerticalAlignment.Top;
             gd.Children.Add(oddBoxes[number - 1]);
         }
+
+        private void halfDivide_Click(object sender, RoutedEventArgs e)
+        {
+            double a = -10, b = -3, f_a, f_b, f_c, x_c;
+            odds = new int[number];
+
+            for (int i = 0; i < number; i++)
+                odds[i] = Convert.ToInt32(oddBoxes[i].Text);
+
+            f_a = EquationFunction(odds, a);
+            f_b = EquationFunction(odds, b);
+
+            double sigma = 0.001;
+
+            while (Math.Abs(b - a) > sigma)
+            {
+                x_c = (a + b) / 2;
+                f_c = EquationFunction(odds, x_c);
+                if (f_a * f_c <= 0)
+                {
+                    b = x_c;
+                    f_b = f_c;
+                }
+                else
+                {
+                    a = x_c;
+                    f_a = f_c;
+                }
+
+            }
+
+            answer.Content = $"x = {(a + b) / 2}";
+
+        }
+
+        private double EquationFunction(int[] func, double num)
+        {
+            double result = 0;
+            for (int i = 0; i < func.Length; i++)
+            {
+                result += func[i] * Math.Pow(num, func.Length - i - 1);
+            }
+
+            return result;
+        }
+
     }
 }

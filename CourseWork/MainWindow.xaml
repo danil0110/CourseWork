@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid x:Name="gd" />
+        <Button x:Name="halfDivide" Content="Метод половинного деления" HorizontalAlignment="Left" Margin="24,112,0,0" VerticalAlignment="Top" Height="34" Width="178" Click="halfDivide_Click"/>
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="button_Click"/>
-        <Grid x:Name="gd" />
+        <Label x:Name="answer" Content="" HorizontalAlignment="Left" Margin="295,225,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
