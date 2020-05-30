@@ -11,10 +11,10 @@
         <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Center" Margin="-120,252,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="button_Click"/>
-        <RadioButton x:Name="radioButton" Content="Метод половинного деления" HorizontalAlignment="Center" Margin="-580,161,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" />
-        <RadioButton x:Name="radioButton_Copy" Content="Метод Ньютона" HorizontalAlignment="Center" Margin="-250,161,0,0" VerticalAlignment="Top" Checked="radioButton_Copy_Checked"/>
-        <RadioButton x:Name="radioButton_Copy1" Content="Метод секущих" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Checked="radioButton_Copy1_Checked"/>
+        <Button x:Name="size" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="size_Click"/>
+        <RadioButton x:Name="radioButton_HalfDivide" Content="Метод половинного деления" HorizontalAlignment="Center" Margin="-580,161,0,0" VerticalAlignment="Top" Checked="radioButton_HalfDivide_Checked" />
+        <RadioButton x:Name="radioButton_Newton" Content="Метод Ньютона" HorizontalAlignment="Center" Margin="-250,161,0,0" VerticalAlignment="Top" Checked="radioButton_Newton_Checked"/>
+        <RadioButton x:Name="radioButton_Secant" Content="Метод секущих" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Checked="radioButton_Secant_Checked"/>
         <Label x:Name="info" Content="" HorizontalAlignment="Left"  Margin="24,180,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_input1" Content="" HorizontalAlignment="Left" Margin="24,202,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="input1" HorizontalAlignment="Left" Margin="58,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>

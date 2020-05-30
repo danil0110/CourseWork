@@ -33,7 +33,7 @@ namespace CourseWork
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void size_Click(object sender, RoutedEventArgs e)
         {
             gd.Children.Clear();
             number = Convert.ToInt32(stepen.Text) + 1;
@@ -66,7 +66,7 @@ namespace CourseWork
             }
         }
 
-        private void radioButton_Checked(object sender, RoutedEventArgs e)
+        private void radioButton_HalfDivide_Checked(object sender, RoutedEventArgs e)
         {
             choice = 1; // метод половинного деления
             info.Content = "Отрезок [a, b]";
@@ -78,7 +78,7 @@ namespace CourseWork
             input1_Copy.Text = "";
         }
 
-        private void radioButton_Copy_Checked(object sender, RoutedEventArgs e)
+        private void radioButton_Newton_Checked(object sender, RoutedEventArgs e)
         {
             choice = 2; // метод Ньютона
             info.Content = "Начальное приближение x0.";
@@ -90,7 +90,7 @@ namespace CourseWork
             input1_Copy.Text = "";
         }
 
-        private void radioButton_Copy1_Checked(object sender, RoutedEventArgs e)
+        private void radioButton_Secant_Checked(object sender, RoutedEventArgs e)
         {
             choice = 3; // метод секущих
             info.Content = "Первое и второе приближение x0, x1.";
