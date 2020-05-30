@@ -123,7 +123,7 @@ namespace CourseWork
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName, false))
                 {
                     sw.WriteLine(Equation.OutputEquation(odds));
-                    sw.WriteLine(answer.Content);
+                    sw.WriteLine(answerBox.Text);
                     sw.Close();
                 }
             }
@@ -138,14 +138,14 @@ namespace CourseWork
                     odds[i] = Convert.ToInt32(oddBoxes[i].Text);
 
                 if (choice == 1)
-                    answer.Content = Equation.HalfDivide(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
+                    answerBox.Text = Equation.HalfDivide(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
                 else if (choice == 2)
-                    answer.Content = Equation.Newton(Convert.ToDouble(input1.Text), odds);
+                    answerBox.Text = Equation.Newton(Convert.ToDouble(input1.Text), odds);
                 else if (choice == 3)
-                    answer.Content = Equation.Secant(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
+                    answerBox.Text = Equation.Secant(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
             }
             else
-                answer.Content = "Нет корней.";
+                answerBox.Text = "Нет корней.";
             
         }
     }

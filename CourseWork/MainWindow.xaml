@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseWork"
         mc:Ignorable="d"
-        Title="Нелинейное алгебраическое уравнение" Height="450" Width="800">
+        Title="Нелинейное алгебраическое уравнение" Height="405" Width="800">
     <Grid>
         <Grid x:Name="gd" />
-        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Center" Margin="-120,252,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
+        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="300,253,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <Button x:Name="size" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="size_Click"/>
@@ -22,7 +22,7 @@
         <TextBox x:Name="input1_Copy" HorizontalAlignment="Left" Margin="134,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
         <Button x:Name="rootSegments" Content="Отделить корни" HorizontalAlignment="Center" Margin="300,152,0,0" VerticalAlignment="Top" Height="33" Width="97" Click="rootSegments_Click"/>
         <Label x:Name="segments" Content="" HorizontalAlignment="Left" Margin="477,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="answer" Content="" HorizontalAlignment="Left" Margin="24,231,0,0" VerticalAlignment="Top"/>
         <Button x:Name="save" Content="Сохранить файл" HorizontalAlignment="Left" Margin="23,296,0,0" VerticalAlignment="Top" Height="34" Width="100" Click="save_Click"/>
+        <TextBox x:Name="answerBox" HorizontalAlignment="Left" Margin="23,234,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Height="53" IsReadOnly="True"/>
     </Grid>
 </Window>
