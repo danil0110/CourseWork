@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +110,23 @@ namespace CourseWork
                 odds[i] = Convert.ToInt32(oddBoxes[i].Text);
 
             segments.Content = Equation.RootSegments(odds, ref flag_answer);
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.FileName = "";
+            saveFile.DefaultExt = ".txt";
+            saveFile.Filter = "Test files|*.txt";
+            if (saveFile.ShowDialog() == true)
+            {
+                using (StreamWriter sw = new StreamWriter(saveFile.FileName, false))
+                {
+                    sw.WriteLine(Equation.OutputEquation(odds));
+                    sw.WriteLine(answer.Content);
+                    sw.Close();
+                }
+            }
         }
 
         private void Calculate_Click(object sender, RoutedEventArgs e)

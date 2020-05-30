@@ -8,20 +8,21 @@
         Title="Нелинейное алгебраическое уравнение" Height="450" Width="800">
     <Grid>
         <Grid x:Name="gd" />
-        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="191,255,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
+        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Center" Margin="-120,252,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <Button x:Name="button" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="button_Click"/>
-        <RadioButton x:Name="radioButton" Content="Метод половинного деления" HorizontalAlignment="Left" Margin="24,161,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" />
-        <RadioButton x:Name="radioButton_Copy" Content="Метод Ньютона" HorizontalAlignment="Left" Margin="220,161,0,0" VerticalAlignment="Top" Checked="radioButton_Copy_Checked"/>
+        <RadioButton x:Name="radioButton" Content="Метод половинного деления" HorizontalAlignment="Center" Margin="-580,161,0,0" VerticalAlignment="Top" Checked="radioButton_Checked" />
+        <RadioButton x:Name="radioButton_Copy" Content="Метод Ньютона" HorizontalAlignment="Center" Margin="-250,161,0,0" VerticalAlignment="Top" Checked="radioButton_Copy_Checked"/>
         <RadioButton x:Name="radioButton_Copy1" Content="Метод секущих" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Checked="radioButton_Copy1_Checked"/>
         <Label x:Name="info" Content="" HorizontalAlignment="Left"  Margin="24,180,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_input1" Content="" HorizontalAlignment="Left" Margin="24,202,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="input1" HorizontalAlignment="Left" Margin="58,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
         <Label x:Name="label_input1_Copy" Content="" HorizontalAlignment="Left" Margin="100,202,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="input1_Copy" HorizontalAlignment="Left" Margin="134,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
-        <Button x:Name="rootSegments" Content="Отделить корни" HorizontalAlignment="Left" Margin="481,154,0,0" VerticalAlignment="Top" Height="33" Width="97" Click="rootSegments_Click"/>
+        <Button x:Name="rootSegments" Content="Отделить корни" HorizontalAlignment="Center" Margin="300,152,0,0" VerticalAlignment="Top" Height="33" Width="97" Click="rootSegments_Click"/>
         <Label x:Name="segments" Content="" HorizontalAlignment="Left" Margin="477,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="answer" Content="" HorizontalAlignment="Left" Margin="24,291,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="answer" Content="" HorizontalAlignment="Left" Margin="24,231,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="save" Content="Сохранить файл" HorizontalAlignment="Left" Margin="23,296,0,0" VerticalAlignment="Top" Height="34" Width="100" Click="save_Click"/>
     </Grid>
 </Window>
