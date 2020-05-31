@@ -35,11 +35,26 @@ namespace CourseWork
 
         private void size_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                number = Convert.ToInt32(stepen.Text) + 1;
+                if (number > 21)
+                {
+                    MessageBox.Show("Максимальная степень 20!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    number = 21;
+                    stepen.Text = "20";
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             gd.Children.Clear();
-            number = Convert.ToInt32(stepen.Text) + 1;
             unknown = new Label[number];
             oddBoxes = new TextBox[number];
-            int marginchik = 70, boxik = 43;
+            int marginchik = 50, boxik = 23;
             for (int i = 0; i < number; i++)
             {
                 oddBoxes[i] = new TextBox();
@@ -107,8 +122,17 @@ namespace CourseWork
             flag_answer = false;
             odds = new int[number];
             for (int i = 0; i < number; i++)
-                odds[i] = Convert.ToInt32(oddBoxes[i].Text);
-
+            {
+                try
+                {
+                    odds[i] = Convert.ToInt32(oddBoxes[i].Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
             segments.Content = Equation.RootSegments(odds, ref flag_answer);
         }
 
@@ -117,7 +141,7 @@ namespace CourseWork
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.FileName = "";
             saveFile.DefaultExt = ".txt";
-            saveFile.Filter = "Test files|*.txt";
+            saveFile.Filter = "Text files|*.txt";
             if (saveFile.ShowDialog() == true)
             {
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName, false))
@@ -129,20 +153,80 @@ namespace CourseWork
             }
         }
 
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Метод половинного деления: на отрезке должен быть только 1 корень!\nМетод Ньютона: приближение должно быть отличное от 0!\nМетод секущих: приближения должны быть отличны от 0!", "Информация", MessageBoxButton.OK, MessageBoxImage.Question);
+        }
+
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
+            odds = new int[number];
+            for (int i = 0; i < number; i++)
+            {
+                try
+                {
+                    odds[i] = Convert.ToInt32(oddBoxes[i].Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+
+            double a = -10000;
+            while (a < 10000)
+            {
+                if (Equation.EquationFunction(odds, a) * Equation.EquationFunction(odds, a + 0.2) < 0)
+                    flag_answer = true;
+                a += 0.2;
+            }
+
             if (flag_answer)
             {
-                odds = new int[number];
-                for (int i = 0; i < number; i++)
-                    odds[i] = Convert.ToInt32(oddBoxes[i].Text);
-
+                double num1 = 0, num2 = 0;
                 if (choice == 1)
-                    answerBox.Text = Equation.HalfDivide(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
+                {
+                    try
+                    {
+                        num1 = Convert.ToDouble(input1.Text);
+                        num2 = Convert.ToDouble(input1_Copy.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    answerBox.Text = Equation.HalfDivide(num1, num2, odds);
+                }
+                    
                 else if (choice == 2)
-                    answerBox.Text = Equation.Newton(Convert.ToDouble(input1.Text), odds);
+                {
+                    try
+                    {
+                        num1 = Convert.ToDouble(input1.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    answerBox.Text = Equation.Newton(num1, odds);
+                }
                 else if (choice == 3)
-                    answerBox.Text = Equation.Secant(Convert.ToDouble(input1.Text), Convert.ToDouble(input1_Copy.Text), odds);
+                {
+                    try
+                    {
+                        num1 = Convert.ToDouble(input1.Text);
+                        num2 = Convert.ToDouble(input1_Copy.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Некорректно введены данные!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    answerBox.Text = Equation.Secant(num1, num2, odds);
+                }
             }
             else
                 answerBox.Text = "Нет корней.";

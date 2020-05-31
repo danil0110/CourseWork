@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CourseWork.App" Collapsed="true">
-    <Position X="2.5" Y="2.5" Width="1.5" />
+    <Position X="4.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.Equation">
-    <Position X="7" Y="2.5" Width="1.75" />
+    <Position X="9" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAEAAAAAAAAgAAAAgAgAAAAEAAAAAACAAEAAA=</HashCode>
       <FileName>Equation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.MainWindow">
-    <Position X="4.25" Y="2.5" Width="2.5" />
+    <Position X="6.25" Y="2.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAgEAAAAAACRAAAFAAEAAAIAEAAAAAABAAAABAAAAA=</HashCode>
+      <HashCode>AAAgEAAAAAACRAAAFAAEAAAIAEAAAAABBAAAABAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
