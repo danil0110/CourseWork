@@ -38,7 +38,7 @@ namespace CourseWork
 
             }
 
-            return $"x = {(a + b) / 2}\nf(x) = {EquationFunction(odds, (a + b) / 2)}\nКоличество итераций: {iterations}";
+            return $"x = {Math.Round((a + b) / 2, 3)}\nf(x) = {Math.Round(EquationFunction(odds, (a + b) / 2), 3)}\nКоличество итераций: {iterations}";
         }
 
         public static string Newton(double x0, int[] odds)
@@ -55,7 +55,7 @@ namespace CourseWork
                 x0 = x1;
                 x1 = x0 - EquationFunction(odds, x0) / EquationFunction(f_der, x0);
             }
-            return $"x = {x1}\nf(x) = {EquationFunction(odds, x1)}\nКоличество итераций: {iterations}";
+            return $"x = {Math.Round(x1, 3)}\nf(x) = {Math.Round(EquationFunction(odds, x1), 3)}\nКоличество итераций: {iterations}";
         }
 
         public static string Secant(double x, double xLast, int[] odds)
@@ -71,7 +71,7 @@ namespace CourseWork
                 xLast = x;
                 x -= EquationFunction(odds, xLast) * (xLast - xGrandLast) / (EquationFunction(odds, xLast) - EquationFunction(odds, xGrandLast));
             }
-            return $"x = {x}\nf(x) = {EquationFunction(odds, x)}\nКоличество итераций: {iterations}";
+            return $"x = {Math.Round(x, 3)}\nf(x) = {Math.Round(EquationFunction(odds, x), 3)}\nКоличество итераций: {iterations}";
         }
 
         public static string RootSegments(int[] odds, ref bool flag_answer)
@@ -82,7 +82,7 @@ namespace CourseWork
             {
                 if (Equation.EquationFunction(odds, a) * Equation.EquationFunction(odds, a + 0.2) < 0)
                 {
-                    result += $"[{a}, {a + 0.2}]\n";
+                    result += $"[{Math.Round(a, 5)}, {Math.Round(a + 0.2, 5)}]\n";
                     flag_answer = true;
                 }
 
