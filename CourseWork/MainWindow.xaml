@@ -8,7 +8,7 @@
         Title="Нелинейное алгебраическое уравнение" Height="355" Width="650" MaxHeight="355" MinHeight="355" MinWidth="650" MaxWidth="1550">
     <Grid>
         <Grid x:Name="gd" />
-        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="300,203,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
+        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="275,203,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <Button x:Name="size" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="size_Click"/>
