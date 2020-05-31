@@ -59,7 +59,7 @@ namespace CourseWork
             {
                 oddBoxes[i] = new TextBox();
                 oddBoxes[i].Name = $"textBox{i + 1}";
-                oddBoxes[i].Margin = new Thickness(boxik, 73, 0, 0);
+                oddBoxes[i].Margin = new Thickness(boxik, 53, 0, 0);
                 oddBoxes[i].Visibility = Visibility.Visible;
                 oddBoxes[i].Width = 27;
                 oddBoxes[i].HorizontalAlignment = HorizontalAlignment.Left;
@@ -67,7 +67,7 @@ namespace CourseWork
                 gd.Children.Add(oddBoxes[i]);
                 unknown[i] = new Label();
                 unknown[i].Name = $"label{i + 1}";
-                unknown[i].Margin = new Thickness(marginchik,70,0,0);
+                unknown[i].Margin = new Thickness(marginchik,50,0,0);
                 unknown[i].Visibility = Visibility.Visible;
                 if (number - i - 1 != 1)
                     unknown[i].Content = $"x^{number - i - 1}";
@@ -138,6 +138,12 @@ namespace CourseWork
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            if (answerBox.Text == "")
+            {
+                MessageBox.Show("Результат отсутствует!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.FileName = "";
             saveFile.DefaultExt = ".txt";

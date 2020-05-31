@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseWork"
         mc:Ignorable="d"
-        Title="Нелинейное алгебраическое уравнение" Height="405" Width="800">
+        Title="Нелинейное алгебраическое уравнение" Height="355" Width="650" MaxHeight="355" MinHeight="355" MinWidth="650" MaxWidth="1550">
     <Grid>
         <Grid x:Name="gd" />
-        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="300,253,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
+        <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="300,203,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
         <Label x:Name="label" Content="Степень уравнения:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="stepen" HorizontalAlignment="Left" Margin="134,14,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
         <Button x:Name="size" Content="ОК" HorizontalAlignment="Left" Margin="175,13,0,0" VerticalAlignment="Top" Width="55" Click="size_Click"/>
-        <RadioButton x:Name="radioButton_HalfDivide" Content="Метод половинного деления" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Checked="radioButton_HalfDivide_Checked" />
-        <RadioButton x:Name="radioButton_Newton" Content="Метод Ньютона" HorizontalAlignment="Left" Margin="221,161,0,0" VerticalAlignment="Top" Checked="radioButton_Newton_Checked"/>
-        <RadioButton x:Name="radioButton_Secant" Content="Метод секущих" HorizontalAlignment="Left" Margin="349,161,0,0" VerticalAlignment="Top" Checked="radioButton_Secant_Checked"/>
-        <Label x:Name="info" Content="" HorizontalAlignment="Left"  Margin="24,180,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_input1" Content="" HorizontalAlignment="Left" Margin="24,202,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="input1" HorizontalAlignment="Left" Margin="58,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
-        <Label x:Name="label_input1_Copy" Content="" HorizontalAlignment="Left" Margin="100,202,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="input1_Copy" HorizontalAlignment="Left" Margin="134,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
-        <Button x:Name="rootSegments" Content="Отделить корни" HorizontalAlignment="Left" Margin="504,152,0,0" VerticalAlignment="Top" Height="33" Width="98" Click="rootSegments_Click"/>
-        <Label x:Name="segments" Content="" HorizontalAlignment="Left" Margin="477,191,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="save" Content="Сохранить файл" HorizontalAlignment="Left" Margin="23,296,0,0" VerticalAlignment="Top" Height="34" Width="100" Click="save_Click"/>
-        <TextBox x:Name="answerBox" HorizontalAlignment="Left" Margin="23,234,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Height="53" IsReadOnly="True"/>
-        <Button x:Name="help" Content="?" HorizontalAlignment="Left" Margin="467,160,0,0" Width="21" VerticalAlignment="Top" Click="help_Click"/>
+        <RadioButton x:Name="radioButton_HalfDivide" Content="Метод половинного деления" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Checked="radioButton_HalfDivide_Checked" />
+        <RadioButton x:Name="radioButton_Newton" Content="Метод Ньютона" HorizontalAlignment="Left" Margin="221,111,0,0" VerticalAlignment="Top" Checked="radioButton_Newton_Checked"/>
+        <RadioButton x:Name="radioButton_Secant" Content="Метод секущих" HorizontalAlignment="Left" Margin="349,111,0,0" VerticalAlignment="Top" Checked="radioButton_Secant_Checked"/>
+        <Label x:Name="info" Content="" HorizontalAlignment="Left"  Margin="24,130,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_input1" Content="" HorizontalAlignment="Left" Margin="24,152,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="input1" HorizontalAlignment="Left" Margin="58,156,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
+        <Label x:Name="label_input1_Copy" Content="" HorizontalAlignment="Left" Margin="100,152,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="input1_Copy" HorizontalAlignment="Left" Margin="134,156,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
+        <Button x:Name="rootSegments" Content="Отделить корни" HorizontalAlignment="Left" Margin="504,102,0,0" VerticalAlignment="Top" Height="33" Width="98" Click="rootSegments_Click"/>
+        <Label x:Name="segments" Content="" HorizontalAlignment="Left" Margin="500,141,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="save" Content="Сохранить файл" HorizontalAlignment="Left" Margin="23,246,0,0" VerticalAlignment="Top" Height="34" Width="100" Click="save_Click"/>
+        <TextBox x:Name="answerBox" HorizontalAlignment="Left" Margin="23,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Height="53" IsReadOnly="True"/>
+        <Button x:Name="help" Content="?" HorizontalAlignment="Left" Margin="467,110,0,0" Width="21" VerticalAlignment="Top" Click="help_Click"/>
     </Grid>
 </Window>
