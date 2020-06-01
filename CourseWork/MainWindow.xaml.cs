@@ -37,7 +37,12 @@ namespace CourseWork
             try
             {
                 number = Convert.ToInt32(stepen.Text) + 1;
-                if (number > 21)
+                if (number <= 0)
+                {
+                    MessageBox.Show("Некорректная степень уравнения!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else if (number > 21)
                 {
                     MessageBox.Show("Максимальная степень 20!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     number = 21;
