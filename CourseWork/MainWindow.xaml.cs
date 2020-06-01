@@ -80,6 +80,16 @@ namespace CourseWork
                 if (i == number - 1)
                     unknown[i].Content = " = 0";
                 gd.Children.Add(unknown[i]);
+
+                if (unknown.Length > 8)
+                {
+                    myWindow.Width = 600 + 70*(unknown.Length - 7);
+                }
+                else
+                {
+                    myWindow.Width = 650;
+                }
+
                 marginchik += 72;
                 boxik += 72;
             }

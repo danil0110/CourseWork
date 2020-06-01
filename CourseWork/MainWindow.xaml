@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseWork"
         mc:Ignorable="d"
-        Title="Нелинейное алгебраическое уравнение" Height="355" Width="650" MaxHeight="355" MinHeight="355" MinWidth="650" MaxWidth="1550">
+        x:Name="myWindow"
+        Title="Нелинейное алгебраическое уравнение" Height="355" Width="650" MaxHeight="355" MinHeight="355" MinWidth="650" MaxWidth="1550" ResizeMode="NoResize" >
     <Grid>
         <Grid x:Name="gd" />
         <Button x:Name="Calculate" Content="Решить" HorizontalAlignment="Left" Margin="275,203,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="Calculate_Click" />
