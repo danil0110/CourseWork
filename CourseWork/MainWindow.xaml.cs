@@ -17,22 +17,21 @@ using System.Windows.Shapes;
 
 namespace CourseWork
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        Label[] unknown;
-        TextBox[] oddBoxes;
-        int number, choice = 0;
-        int[] odds;
-        bool flag_answer;
+        Label[] unknown;        // масив написів для змінних "x^5", "x^4", ...
+        TextBox[] oddBoxes;     // масив комірок для коефіцієнтів
+        int number, choice = 0; // степінь рівняння, вибір методу розв'язання
+        int[] odds;             // масив коефіцієнтів рівняння
+        bool flag_answer;       // існування коренів
 
+        // Створення вікна програми
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        // Кнопка зчитування степені рівняння
         private void size_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -51,7 +50,7 @@ namespace CourseWork
                 return;
             }
 
-            gd.Children.Clear();
+            gd.Children.Clear(); // видалення всіх написів із змінними та комірок для коефіцієнтів
             unknown = new Label[number];
             oddBoxes = new TextBox[number];
             int marginchik = 50, boxik = 23;
@@ -81,6 +80,7 @@ namespace CourseWork
             }
         }
 
+        // Обрати метод половинного ділення
         private void radioButton_HalfDivide_Checked(object sender, RoutedEventArgs e)
         {
             choice = 1; // метод половинного деления
@@ -93,6 +93,7 @@ namespace CourseWork
             input1_Copy.Text = "";
         }
 
+        // Обрати метод Ньютона
         private void radioButton_Newton_Checked(object sender, RoutedEventArgs e)
         {
             choice = 2; // метод Ньютона
@@ -105,6 +106,7 @@ namespace CourseWork
             input1_Copy.Text = "";
         }
 
+        // Обрати метод січних
         private void radioButton_Secant_Checked(object sender, RoutedEventArgs e)
         {
             choice = 3; // метод секущих
@@ -117,6 +119,7 @@ namespace CourseWork
             input1_Copy.Text = "";
         }
 
+        // Кнопка для відділення коренів рівняння на відрізки
         private void rootSegments_Click(object sender, RoutedEventArgs e)
         {
             flag_answer = false;
@@ -136,6 +139,7 @@ namespace CourseWork
             segments.Content = Equation.RootSegments(odds, ref flag_answer);
         }
 
+        // Кнопка для збереження результатів у текстовий файл
         private void save_Click(object sender, RoutedEventArgs e)
         {
             if (answerBox.Text == "")
@@ -159,11 +163,13 @@ namespace CourseWork
             }
         }
 
+        // Кнопка для отримання додаткової інформації щодо кожного з методів
         private void help_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Метод половинного деления: на отрезке должен быть только 1 корень!\nМетод Ньютона: приближение должно быть отличное от 0!\nМетод секущих: приближения должны быть отличны от 0!", "Информация", MessageBoxButton.OK, MessageBoxImage.Question);
         }
 
+        // Кнопка для розв'язання рівняння
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             odds = new int[number];
